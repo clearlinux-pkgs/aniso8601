@@ -4,7 +4,7 @@
 #
 Name     : aniso8601
 Version  : 4.0.1
-Release  : 2
+Release  : 3
 URL      : https://files.pythonhosted.org/packages/b0/23/67f6d3b4b11578b13a7fe0c26a2f8c9becc61c4c601ccc8d8d23ca7ca54f/aniso8601-4.0.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b0/23/67f6d3b4b11578b13a7fe0c26a2f8c9becc61c4c601ccc8d8d23ca7ca54f/aniso8601-4.0.1.tar.gz
 Summary  : A library for parsing ISO 8601 strings.
