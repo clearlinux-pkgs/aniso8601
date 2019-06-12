@@ -1,5 +1,5 @@
 PKG_NAME := aniso8601
-URL = https://files.pythonhosted.org/packages/f8/1d/1cb919d85c0c33e1aa56d9a6f31ff2f799e41f98951c4551336254294ec1/aniso8601-6.0.0.tar.gz
+URL = https://files.pythonhosted.org/packages/7f/39/0da0982a3a42fd896beaa07425692fb3100a9d0e40723783efc20f1dec7c/aniso8601-7.0.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
