@@ -4,7 +4,7 @@
 #
 Name     : aniso8601
 Version  : 7.0.0
-Release  : 7
+Release  : 8
 URL      : https://files.pythonhosted.org/packages/7f/39/0da0982a3a42fd896beaa07425692fb3100a9d0e40723783efc20f1dec7c/aniso8601-7.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7f/39/0da0982a3a42fd896beaa07425692fb3100a9d0e40723783efc20f1dec7c/aniso8601-7.0.0.tar.gz
 Summary  : A library for parsing ISO 8601 strings.
