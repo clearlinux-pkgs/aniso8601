@@ -4,7 +4,7 @@
 #
 Name     : aniso8601
 Version  : 8.0.0
-Release  : 10
+Release  : 11
 URL      : https://files.pythonhosted.org/packages/2f/45/f2aec388115ea65a2b95b3dc1ba058a8470675fe16bcd4678a44a59776ea/aniso8601-8.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2f/45/f2aec388115ea65a2b95b3dc1ba058a8470675fe16bcd4678a44a59776ea/aniso8601-8.0.0.tar.gz
 Summary  : A library for parsing ISO 8601 strings.
@@ -17,10 +17,16 @@ BuildRequires : buildreq-distutils3
 BuildRequires : python-dateutil
 
 %description
-aniso8601
 =========
-Another ISO 8601 parser for Python
-----------------------------------
+        
+        Another ISO 8601 parser for Python
+        ----------------------------------
+        
+        Features
+        ========
+        * Pure Python implementation
+        * Python 3 support
+        * Logical behavior
 
 %package license
 Summary: license components for the aniso8601 package.
@@ -50,14 +56,14 @@ python3 components for the aniso8601 package.
 
 %prep
 %setup -q -n aniso8601-8.0.0
+cd %{_builddir}/aniso8601-8.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568295835
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576006944
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -73,12 +79,12 @@ python3 setup.py build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
+PYTHONPATH=%{buildroot}$(python -c "import sys; print(sys.path[-1])") python setup.py test
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/aniso8601
-cp LICENSE %{buildroot}/usr/share/package-licenses/aniso8601/LICENSE
+cp %{_builddir}/aniso8601-8.0.0/LICENSE %{buildroot}/usr/share/package-licenses/aniso8601/c0ef2a5ffbd27ad067d3ff3ad41dd4aa02d021c8
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -89,7 +95,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/aniso8601/LICENSE
+/usr/share/package-licenses/aniso8601/c0ef2a5ffbd27ad067d3ff3ad41dd4aa02d021c8
 
 %files python
 %defattr(-,root,root,-)
